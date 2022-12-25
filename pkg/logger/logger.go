@@ -24,9 +24,9 @@ func New(debug, time bool, out, err io.Writer) *Logger {
 
 func (l *Logger) stream(level Level) io.Writer {
 	switch level {
-	case debug | info:
+	case debug, info:
 		return l.out
-	case warn | err | fatal:
+	case warn, err, fatal:
 		return l.err
 	default:
 		panic(fmt.Errorf("unknown logger level: %d", level))
