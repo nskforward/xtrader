@@ -1,4 +1,4 @@
-package broker
+package quote
 
 type Quote interface {
 	Bid_() (price, size float64, err error)
