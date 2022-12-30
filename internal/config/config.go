@@ -3,16 +3,13 @@ package config
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/nskforward/xtrader/internal/broker/exante"
+	"github.com/nskforward/xtrader/internal/broker"
 	"github.com/nskforward/xtrader/pkg/helper"
 	"io/ioutil"
 )
 
 type Config struct {
-	Broker struct {
-		Name   string        `json:"name"`
-		Exante exante.Config `json:"exante"`
-	} `json:"broker"`
+	Broker broker.Config `json:"broker"`
 }
 
 func newConfig() *Config {
